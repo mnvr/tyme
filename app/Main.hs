@@ -1,6 +1,6 @@
 module Main where
 
-import qualified Time
+import Time
 
 main :: IO ()
-main = Time.now >>= putStrLn
+main = foreverNow
