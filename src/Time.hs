@@ -1,4 +1,8 @@
-module Time (someFunc) where
+module Time where
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+import Data.Time
+
+now :: IO String
+now = do
+  t <- Data.Time.getCurrentTime
+  return (show t)

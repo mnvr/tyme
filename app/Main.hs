@@ -1,8 +1,6 @@
 module Main where
 
-import qualified Time (someFunc)
+import qualified Time
 
 main :: IO ()
-main = do
-  putStrLn "Hello, Haskell!"
-  Time.someFunc
+main = Time.now >>= putStrLn
