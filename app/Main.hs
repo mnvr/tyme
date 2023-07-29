@@ -11,6 +11,8 @@ main = do
   printMessage d
   foreverNow d
 
+-- | Try to parse and return, an integral duration value from the first entry in
+-- the given list of strings. If that's not possible, return a default duration.
 parseDuration :: [String] -> Int
 parseDuration args = fromMaybe 3 (listToMaybe args >>= readMaybe)
 
