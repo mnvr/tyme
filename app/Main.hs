@@ -14,7 +14,7 @@ main = do
 parseDuration :: IO Int
 parseDuration = do
   args <- getArgs
-  return $ fromMaybe 3 $ (listToMaybe args) >>= readMaybeInt
+  return $ fromMaybe 3 $ listToMaybe args >>= readMaybeInt
 
 readMaybeInt :: String -> Maybe Int
 readMaybeInt = readMaybe
