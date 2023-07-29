@@ -6,10 +6,7 @@ import Control.Concurrent
 import Data.Time
 
 now :: IO String
-now = do
-  show <$> Data.Time.getCurrentTime
-
--- return (show t)
+now = show <$> Data.Time.getCurrentTime
 
 foreverNow :: Int -> IO ()
 foreverNow t = do
