@@ -7,8 +7,8 @@ import Data.Time
 
 now :: IO String
 now = do
-  t <- Data.Time.getCurrentTime
-  return (show t)
+  fmap show Data.Time.getCurrentTime
+  -- return (show t)
 
 foreverNow :: Int -> IO ()
 foreverNow t = do
