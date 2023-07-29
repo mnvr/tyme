@@ -7,17 +7,12 @@ import Time
 
 main :: IO ()
 main = do
-  d <- parseDuration
+  d <- parseDuration <$> getArgs
   printMessage d
   foreverNow d
 
-parseDuration :: IO Int
-parseDuration = do
-  args <- getArgs
-  return (parseDuration2 args)
-
-parseDuration2 :: [String] -> Int
-parseDuration2 args = fromMaybe 3 b
+parseDuration :: [String] -> Int
+parseDuration args = fromMaybe 3 b
   where
     a = (listToMaybe :: [String] -> Maybe String) args
     b = a >>= (readMaybeInt :: String -> Maybe Int)
